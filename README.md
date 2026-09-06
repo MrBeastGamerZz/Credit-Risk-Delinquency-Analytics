@@ -1,0 +1,2 @@
+# Credit Risk & Delinquency Analytics
+An end-to-end data analytics project focused on analyzing customer credit behavior and identifying key factors associated with loan delinquency. The project involves data cleaning and exploration in Excel, querying and transforming data using SQL, performing deeper analysis with Python, and developing an interactive Power BI dashboard to uncover delinquency trends, customer risk segments, portfolio patterns, and actionable business insights.
