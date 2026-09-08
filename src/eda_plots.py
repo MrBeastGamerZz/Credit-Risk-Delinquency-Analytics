@@ -161,6 +161,6 @@ def chart_6_risk_tier(df):
 # Run directly to test 
 if __name__ == "__main__":
 
-    df = pd.read_csv("data/featured.csv")
+    df = pd.read_csv("excel data/featured.csv")
     print(f"Loaded: {df.shape}")
     plot_all(df)

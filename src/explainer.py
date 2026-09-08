@@ -111,7 +111,7 @@ def explain(df, feature_cols):
 if __name__ == "__main__":
     import json
 
-    df = pd.read_csv("data/featured.csv")
+    df = pd.read_csv("excel data/featured.csv")
     print(f"Loaded: {df.shape}")
 
     # Load feature list from saved metrics

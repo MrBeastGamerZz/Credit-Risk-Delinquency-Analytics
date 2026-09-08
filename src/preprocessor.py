@@ -35,7 +35,7 @@ def preprocess(df):
 if __name__ == "__main__":
 
     # Load the cleaned CSV from Excel
-    df_raw = pd.read_csv("Cleaned_dataset.csv")
+    df_raw = pd.read_csv("excel data/processed/Cleaned_dataset.csv")
     print(f"Loaded: {df_raw.shape}")
 
     # Clean it
@@ -43,5 +43,5 @@ if __name__ == "__main__":
 
     # Save to processed folder
     Path("data").mkdir(parents=True, exist_ok=True)
-    df_clean.to_csv("data/fully_cleaned.csv", index=False)
-    print("Saved to data/fully_cleaned.csv")
+    df_clean.to_csv("excel data/fully_cleaned.csv", index=False)
+    print("Saved to excel data/fully_cleaned.csv")

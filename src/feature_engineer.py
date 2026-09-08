@@ -40,11 +40,11 @@ def engineer_features(df):
 #Run directly to test 
 if __name__ == "__main__":
 
-    df = pd.read_csv("data/fully_cleaned.csv")
+    df = pd.read_csv("excel data/fully_cleaned.csv")
     print(f"Loaded: {df.shape}")
 
     df = engineer_features(df)
 
-    Path("data").mkdir(parents=True, exist_ok=True)
-    df.to_csv("data/featured.csv", index=False)
+    Path("excel data").mkdir(parents=True, exist_ok=True)
+    df.to_csv("excel data/featured.csv", index=False)
     print("Saved to data/...featured.csv")

@@ -96,7 +96,7 @@ def export_scores(df, feature_cols, shap_df):
 # Run directly to test
 if __name__ == "__main__":
 
-    df = pd.read_csv("data/featured.csv")
+    df = pd.read_csv("excel data/featured.csv")
     print(f"Loaded: {df.shape}")
 
     # Load SHAP summary from Phase 6
