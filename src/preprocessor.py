@@ -37,6 +37,6 @@ if __name__ == "__main__":
     # Clean it
     df_clean = preprocess(df_raw)
     # Save to processed folder
-    Path("data").mkdir(parents=True, exist_ok=True)
+    Path("excel data").mkdir(parents=True, exist_ok=True)
     df_clean.to_csv("excel data/fully_cleaned.csv", index=False)
     print("Saved to excel data/fully_cleaned.csv")
