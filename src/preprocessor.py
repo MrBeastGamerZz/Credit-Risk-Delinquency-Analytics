@@ -16,7 +16,6 @@ def preprocess(df):
     # ML models can't read text — they need numbers
     # On-time = 0, Late = 1, Missed = 2
     encode_map = {"On-time": 0, "Late": 1, "Missed": 2}
-
     month_cols = ["Month_1", "Month_2", "Month_3","Month_4", "Month_5", "Month_6"]
 
     for col in month_cols:
@@ -27,20 +26,16 @@ def preprocess(df):
     # Excel already filled them — this just double checks
     total_missing = df.isnull().sum().sum()
     print(f"Missing values remaining: {total_missing}")
-
     print(f"Preprocessing done. Shape: {df.shape}")
     return df
 
 # Run this file directly to test 
 if __name__ == "__main__":
-
     # Load the cleaned CSV from Excel
     df_raw = pd.read_csv("excel data/processed/Cleaned_dataset.csv")
     print(f"Loaded: {df_raw.shape}")
-
     # Clean it
     df_clean = preprocess(df_raw)
-
     # Save to processed folder
     Path("data").mkdir(parents=True, exist_ok=True)
     df_clean.to_csv("excel data/fully_cleaned.csv", index=False)

@@ -164,3 +164,4 @@ if __name__ == "__main__":
     df = pd.read_csv("excel data/featured.csv")
     print(f"Loaded: {df.shape}")
     plot_all(df)
+    print("\nCompleted...")

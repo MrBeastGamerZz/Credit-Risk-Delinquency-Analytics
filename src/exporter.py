@@ -4,7 +4,6 @@ import joblib
 import sqlite3
 from pathlib import Path
 
-
 THRESHOLD = 0.40
 
 FEATURE_COLS = [
@@ -17,14 +16,12 @@ FEATURE_COLS = [
     "Month_4", "Month_5", "Month_6",
 ]
 
-
 def export_scores(df, feature_cols, shap_df):
     """
     Score all customers.
     Write results to SQLite database.
     Export final CSV for Power BI.
     """
-
     # Load model
     model = joblib.load("outputs/model/xgb_model.pkl")
     print("Model loaded")
@@ -89,7 +86,6 @@ def export_scores(df, feature_cols, shap_df):
     output.to_csv("outputs/reports/dashboard_data.csv", index=False)
     print(f"dashboard_data.csv saved")
     print(f"Shape: {output.shape}")
-
     return output
 
 
@@ -115,4 +111,4 @@ if __name__ == "__main__":
     feature_cols = [f for f in feature_cols if f in df_enc.columns]
 
     final_df = export_scores(df, feature_cols, shap_df)
-    print("\nPhase 7 complete.")
+    print("\nCompleted...")

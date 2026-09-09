@@ -82,11 +82,9 @@ def explain(df, feature_cols):
         ),
         show=False
     )
-    plt.title(f"Why This Customer Is High Risk — Score: {highest_score:.3f}",
-              fontsize=13)
+    plt.title(f"Why This Customer Is High Risk — Score: {highest_score:.3f}", fontsize=13)
     plt.tight_layout()
-    plt.savefig("outputs/plots/09_shap_waterfall.png",
-                dpi=150, bbox_inches="tight")
+    plt.savefig("outputs/plots/09_shap_waterfall.png", dpi=150, bbox_inches="tight")
     plt.close()
     print("Chart 9 saved: SHAP waterfall")
 
@@ -140,4 +138,4 @@ if __name__ == "__main__":
     feature_cols = [f for f in feature_cols if f in df_enc.columns]
 
     shap_df = explain(df, feature_cols)
-    print("\nPhase 6 complete.")
+    print("\nCompleted...")

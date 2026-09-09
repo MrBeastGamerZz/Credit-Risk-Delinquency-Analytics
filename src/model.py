@@ -29,14 +29,13 @@ FEATURE_COLS = [
 ]
 
 TARGET = "Delinquent_Account"
+
 def prepare_data(df):
     """Split data into train and test sets."""
     df = df.copy()
     # Convert text categories to numbers using one-hot encoding
     # This turns Employment_Status into separate 0/1 columns
-    df = pd.get_dummies(df,
-                        columns=["Employment_Status", "Credit_Card_Type"],
-                        drop_first=True)
+    df = pd.get_dummies(df, columns=["Employment_Status", "Credit_Card_Type"], drop_first=True)
 
     # Get the new encoded column names
     encoded = [c for c in df.columns
@@ -73,6 +72,7 @@ def evaluate(model, X_test, y_test, model_name):
     """Print evaluation results for one model."""
     # Get probability scores (0.0 to 1.0)
     y_proba = model.predict_proba(X_test)[:, 1]
+    
     # Apply our custom threshold
     y_pred = (y_proba >= THRESHOLD).astype(int)
     auc  = roc_auc_score(y_test, y_proba)
